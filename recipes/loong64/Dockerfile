@@ -38,9 +38,6 @@ RUN apt-get update \
          ccache \
          xz-utils
 
-RUN mkdir -p /opt/x-tools \
-    && curl -L https://github.com/loong64/cross-tools/releases/download/canadian-20250803/x86_64-linux-gnu-cross-tools-loongarch64-unknown-linux-gnu-oldworld.tar.xz | tar xJf - -C /opt/x-tools
-
 COPY --chown=node:node run.sh /home/node/run.sh
 
 VOLUME /home/node/.ccache
