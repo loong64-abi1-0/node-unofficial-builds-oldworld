@@ -25,7 +25,7 @@ RUN rm -f /usr/bin/python3
 RUN ln -s /usr/bin/python3.10 /usr/bin/python3
 
 RUN mkdir -p /opt/x-tools \
-    && curl -L https://github.com/loong64/cross-tools/releases/download/canadian-20250803/x86_64-linux-gnu-cross-tools-loongarch64-unknown-linux-musl-oldworld.tar.xz | tar xJf - -C /opt/x-tools
+    && curl -L https://github.com/loong64-abi1-0/cross-tools/releases/download/20260708/x86_64-cross-tools-loongarch64-unknown-linux-musl-oldworld.tar.xz | tar xJf - -C /opt/x-tools
 
 COPY --chown=node:node run.sh /home/node/run.sh
 
