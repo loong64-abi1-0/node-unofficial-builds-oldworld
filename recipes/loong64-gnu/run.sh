@@ -21,8 +21,8 @@ cd "node-${fullversion}"
 export CCACHE_BASEDIR="$PWD"
 export CC_host="ccache gcc-13"
 export CXX_host="ccache g++-13"
-export CC="ccache /usr/bin/loongarch64-linux-gnu-gcc-14"
-export CXX="ccache /usr/bin/loongarch64-linux-gnu-g++-14"
+export CC="ccache /opt/x-tools/loongarch64-unknown-linux-gnu/bin/loongarch64-unknown-linux-gnu-gcc"
+export CXX="ccache /opt/x-tools/loongarch64-unknown-linux-gnu/bin/loongarch64-unknown-linux-gnu-g++"
 export CXXFLAGS="-DHWY_BROKEN_EMU128=0"
 
 make -j$(getconf _NPROCESSORS_ONLN) binary V= \

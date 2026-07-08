@@ -19,13 +19,13 @@ RUN apt-get update \
          make \
          python3.10 \
          ccache \
-         xz-utils \
-         g++-14-loongarch64-linux-gnu \
-         gcc-14-loongarch64-linux-gnu-base \
-         gcc-14-loongarch64-linux-gnu
+         xz-utils
 
 RUN rm -f /usr/bin/python3
 RUN ln -s /usr/bin/python3.10 /usr/bin/python3
+
+RUN mkdir -p /opt/x-tools \
+    && curl -L https://github.com/loong64/cross-tools/releases/download/canadian-20250803/x86_64-linux-gnu-cross-tools-loongarch64-unknown-linux-gnu-oldworld.tar.xz | tar xJf - -C /opt/x-tools
 
 COPY --chown=node:node run.sh /home/node/run.sh
 
